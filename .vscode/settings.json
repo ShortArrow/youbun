@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "C:\\tools\\miniconda3\\envs\\youbun-env\\python.exe",
+    "python.formatting.provider": "black"
+}
