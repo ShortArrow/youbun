@@ -3,6 +3,7 @@ import time
 import ccxt
 from datetime import datetime
 from pprint import pprint
+from localmodules import readsetup
 
 print(datetime.now())
 
@@ -13,10 +14,11 @@ print("deffence", 100 / (LEVE + 1), "%")  # 最高値からこれだけの調整
 LOT = 10  # [USD]一度に注文する量
 STIME = 3  # [sec]ループ頻度。多分3以上じゃないとだめ
 bybit = ccxt.bybit()
-bybit.apiKey = ""
-bybit.secret = ""
+bybit.apiKey = readsetup.apikey()
+bybit.secret = readsetup.secret()
 
 # 初期処理#########################################
+bybit.set_sandbox_mode(True)
 # 全注文キャンセル
 bybit.cancelAllOrders("BTC/USD")
 # 証拠金を取得
