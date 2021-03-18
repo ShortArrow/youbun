@@ -45,6 +45,7 @@ if pos["result"]["size"] > 0:
             "reduce_only": True,
         }
     )
+    
 
 # 寸前のポジション、減ったら決済と認識、停止
 pre_pos = pos["result"]["size"]
